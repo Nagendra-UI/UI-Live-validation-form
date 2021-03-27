@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Live Validation</title>
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <form class="form" autocomplete="off">
+            <h2>UI Live Validation Sample Form</h2>
+            <div id="form-group" class="form-group">
+                <div class=form-group1>
+                    <div class="form-control">
+                        <input type="text" class="form-value" id="username" placeholder="User Name">
+                    </div>
+
+                    <div class="form-control ">
+                        <input type="email" class="form-value" id="email" placeholder="Email">
+
+                    </div>
+
+                    <div class="form-control">
+                        <input type="tel" class="form-value" id="tel" placeholder="Mobile No.">
+
+                    </div>
+                    <div class="form-control">
+                        <input type="password" class="form-value" id="password" placeholder="Password">
+
+                    </div>
+                    <div class="form-control ">
+                        <input type="password" class="form-value" id="cnf-password" placeholder="Confirm Password">
+
+                    </div>
+                </div>
+                <div class=form-group2>
+
+                    <div class="date-container form-control">
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" class="birthday form-value" id="birthday" name="birthday">
+
+                    </div>
+
+                    <div class="radio-btn">
+                        <span class="radio">Gender:</span>
+                        <label class="radio">
+                            <label class="radio-btn-bg">
+                                <input type="radio" class="radio" name="gender" checked>
+                                <span class="check-mark"></span>
+                                <span class="radio-title">Male</span>
+                            </label>
+
+                        </label>
+                        <label class="radio">
+                            <label class="radio-btn-bg">
+                                <input type="radio" class="radio" name="gender">
+                                <span class="check-mark"></span>
+                                <span class="radio-title">Female</span>
+                            </label>
+
+                        </label>
+                    </div>
+
+                    <div class="form-control textarea">
+                        <textarea class="form-value" id="textarea" placeholder="Say something about you..."></textarea>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" class="checkbox-value" id="checkbox" name="acceptTermsConditions">
+                        <label for="acceptTermsConditions">Accept terms and conditions</label>
+                    </div>
+                </div>
+            </div>
+            <div class="btn">
+                <button class="button" id="submit" disabled>Submit</button>
+                <input type="reset" class="reset" id="reset">
+            </div>
+        </form>
+
+    </div>
+    <script src="main.js">
+    </script>
+</body>
+
+</html>

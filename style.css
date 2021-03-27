@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --primary-color: rgb(248, 238, 235);
+    --secondary-color:steelblue;
+    --border-clr:rgb(221, 250, 198);
+    --hovered-bg-color: rgb(39, 49, 46);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    outline: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url('assets/room.jpg') no-repeat center;
+    background-size:cover;
+    background-color: #00ce2d;
+    background-blend-mode:hard-light;
+    font-size: 16px;
+}
+
+.content {
+    color:yellow;
+    margin: 10px auto;
+     font-size: 18px;
+     padding: 10px;
+}
+
+.form.form-hide-show-content {
+    display: none;
+}
+
+.form-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.form-container h2 {
+    margin: 10px auto;
+    text-align: center;
+     color: rgb(255, 255, 255);
+}
+
+.form {
+    max-width: 800px;
+    margin: 10px auto;
+    background-color: rgba(53, 136, 36, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family: inherit;
+      
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.form-group1, .form-group2 {
+    margin-top: 0;
+    width: 100%;
+    margin: 10px 20px;
+}
+
+
+.form-control input {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    margin: 20px auto;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.form-control textarea {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    margin: 15px auto;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.radio-btn {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.radio-btn-bg {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(3, 49, 3);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 10px;
+}
+
+.radio-btn-bg .check-mark {
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border-radius: 50%;
+    background-color: rgb(3, 49, 3);
+    display: none;
+}
+
+.radio-btn-bg input:checked + .check-mark {
+    display: inline-block;
+}
+
+.radio-btn-bg input {
+    display: none;
+}
+.radio + .radio {
+    margin-right: 50px;
+}
+
+.radio-title {
+      position: absolute;
+      left: 25px;
+}
+
+.checkbox-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 15px auto;
+}
+
+.date-container .birthday  {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px auto 15px 0;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.date-container .birthday input {
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.date-container label {
+    padding-top:15px;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+.birthday {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    margin: 15px auto 10px 10px;
+}
+
+.btn {
+    width: 20px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.btn .button, .btn .reset {
+    padding:8px 15px;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 20px;
+    font-family: inherit;
+    cursor: pointer;
+    color: lightseagreen;
+}
+
+.form-control {
+    position: relative;
+}
+
+.form-group .form-control .error-message {
+    position: absolute;
+    color:crimson;
+    font-size: 14px;
+    font-weight:500;
+    left: 15px;
+    top: 50px;
+}
+
+.form-group .form-control.textarea .error-message {
+    top: 60px  !important;
+}
+
+.form-group .checkbox-container .error-message {
+    top: 60px  !important;
+}
+
+.form-group .date-container.form-control .error-message {
+    top: 65px  !important;
+}
+
+.form-control.error input {
+    border-bottom: 2px solid crimson;;
+    margin: 20px auto;
+    color: #fff;
+}
+
+.form-control.error textarea {
+    border-bottom: 2px solid crimson;;
+    margin: 20px auto;
+    color: #fff;
+}
+    
+
+     @media (max-width: 650px) {
+     
+.form {
+    margin-top: 50px;
+    padding: 25px;
+
+}
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+     }
+
+    .form-group1, .form-group2 {
+        margin-top: 0;
+        width: 100%;
+        margin: 10px 20px;
+    }
+}
+
+@media (max-width: 365px) {
+    .form {
+        height: 100vh;
+    }
+    .checkbox-container {
+        margin: 12px auto;
+   }
+   .form-control.date-container .date  {
+    margin: 8px auto 12px;
+   }
+   .form-control textarea {
+    margin: 12px auto;
+   }
+   .radio {
+    margin: 12px auto;
+   }
+
+   .form-control input {
+    margin: 15px auto;
+}
+}
+
+
