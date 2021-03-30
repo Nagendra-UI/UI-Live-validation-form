@@ -104,7 +104,6 @@ class Validation {
         })
         this.dob.addEventListener('change', (e) => {
             e.preventDefault()
-            console.log(this.dob.value)
             this.dobImmediately()
             this.validateForm()
         })
