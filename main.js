@@ -102,6 +102,12 @@ class Validation {
             // this.checkbox.checked = this.checkbox.checked
             this.validateForm()
         })
+        this.dob.addEventListener('change', (e) => {
+            e.preventDefault()
+            console.log(this.dob.value)
+            this.dobImmediately()
+            this.validateForm()
+        })
         this.reset.addEventListener('click', (e) => {
             e.preventDefault()
             this.onReset()
@@ -269,7 +275,6 @@ class Validation {
         }
     }
 
-
     //error insert methods
     isDifferent(element, handler) {
         if (element.previousValue != element.value) {
@@ -287,7 +292,6 @@ class Validation {
     showValidationError(el, msg) {
         el.nextElementSibling.innerHTML = msg
         el.parentElement.classList.add('error')
-
     }
 
     hideValidationErrors(el) {
@@ -305,18 +309,14 @@ class Validation {
     }
 
     textareaImmediately() {
-
-
         if (this.textarea.value.length > 50) {
             this.showValidationError(this.username, "textarea can not exceed 50 characters")
             this.username.error = true
         }
-
         if (this.textarea.value == "") {
             this.showValidationError(this.textarea, "Some text is required")
             this.textarea.error = true
         }
-
         if (!this.textarea.error) {
             this.hideValidationErrors(this.textarea)
         }
@@ -329,10 +329,42 @@ class Validation {
         }
     }
 
+    dobImmediately() {
+        this.dob.error = false
+        if (this.dob.value == "") {
+            this.showValidationError(this.dob, "date of birth is required")
+            this.dob.error = true
+        }
+
+        if (new Date().getTime() < new Date(this.dob.value).getTime()) {
+            this.showValidationError(this.dob, "date is invalid")
+            this.dob.error = true
+        }
+
+        if (!this.dob.error) {
+            this.hideValidationErrors(this.dob)
+        }
+    }
+
     validateForm() {
-        if (!this.username.error && !this.email.error && !this.tel.error && !this.password.error &&
-            !this.cnfPassword.error && !this.textarea.error && this.checkbox.checked) {
+        if (!this.username.error &&
+            !this.email.error &&
+            !this.tel.error && !this.password.error &&
+            !this.cnfPassword.error &&
+            !this.textarea.error &&
+            this.checkbox.checked &&
+            !this.dob.error &&
+            this.username.value != "" &&
+            this.email.value != "" &&
+            this.email.value != "" &&
+            this.tel.value != "" &&
+            this.password.value != "" &&
+            this.cnfPassword.value != "" &&
+            this.dob.value != "" &&
+            this.textarea.value != "") {
+
             this.submit.disabled = false
+
         } else {
             this.submit.disabled = true
         }
@@ -345,6 +377,7 @@ class Validation {
         this.tel.value = "";
         this.password.value = "";
         this.cnfPassword.value = "";
+        this.dob.value = "";
         this.textarea.value = "";
         this.checkbox.checked = false
         this.validateForm()
@@ -357,7 +390,7 @@ class Validation {
             <p class="content">E-mail. ${this.email.value}</p>
             <p class="content">Phone No. ${this.tel.value}</p>
             <p class="content"> About. ${this.textarea.value}</p>  
-            <p class="content"> Date of Biarth. ${this.dob.value}</p>    
+            <p class="content"> Date of Birth. ${this.dob.value}</p>    
         </div>`
         //     console.log(this.username.value,
         //         this.email.value,
@@ -369,8 +402,9 @@ class Validation {
         //         this.checkbox.checked)
     }
 
-
 }
+
+//Instantiation.....
 
 new Validation()
 
